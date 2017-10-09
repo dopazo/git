@@ -1,0 +1,20 @@
+(import '(java.util Scanner))
+;(def i (atom 0))
+;(def k (atom 0))
+
+(def scan (Scanner. *in*))
+(println "Altura de la pirámide: ")
+(def altura (atom (.nextInt scan)))
+
+(dotimes [i @altura]
+       (loop [j @altura]
+         (when (> j i)
+          (print " ")
+          (recur (- j 1))
+         )
+       )
+       
+       (dotimes [k (+ i 1)]
+          (print "#"))
+       (println)
+)
